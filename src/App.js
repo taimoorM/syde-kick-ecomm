@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
+import Nav from "./Nav";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Syde Kicks</h1>
+      <Nav />
     </div>
   );
 }
