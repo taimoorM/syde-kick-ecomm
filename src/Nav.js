@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faBagShopping,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
   return (
@@ -15,6 +19,9 @@ const Nav = () => {
               Search for products
             </label>
             <input type="text" id="searchBar" />
+            <button className="searchBtn">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
           </fieldset>
         </form>
         <ul className="searchIcons">

@@ -230,10 +230,12 @@ template {
   border: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 .searchBar {
   width: 50%;
+  position: relative;
 }
 
 .searchBar input {
@@ -241,6 +243,22 @@ template {
   height: 40px;
   border: 1px solid #000;
   border-radius: 50px;
+  padding: 5px 55px 5px 20px;
+}
+
+.searchBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-color: #000;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: transparent;
+  width: 50px;
+  cursor: pointer;
 }
 
 .header {
