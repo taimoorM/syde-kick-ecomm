@@ -4,8 +4,12 @@ import {
   faBagShopping,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import { BasketContext } from "./Context";
+import { useContext } from "react";
 
 const Nav = () => {
+  const { basket } = useContext(BasketContext);
+
   return (
     <nav className="Nav">
       <div className="wrapper">
@@ -27,6 +31,7 @@ const Nav = () => {
         <ul className="searchIcons">
           <FontAwesomeIcon icon={faUser} />
           <FontAwesomeIcon icon={faBagShopping} />
+          <span>{basket.length}</span>
         </ul>
       </div>
     </nav>

@@ -1,10 +1,16 @@
-import React from "react";
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { BasketContext } from "./Context";
 
 const Product = ({ shoe }) => {
   const { img, title, discount, price } = shoe;
   const newPrice = price - price * discount;
+  const { basket, setBasket } = useContext(BasketContext);
+
+  const addToBasket = () => {
+    setBasket([...basket, shoe]);
+  };
 
   return (
     <div className="Product">
@@ -20,7 +26,9 @@ const Product = ({ shoe }) => {
           <p className="productPrice">{newPrice.toFixed(2)}</p>
         </div>
         <div className="addBasket">
-          <FontAwesomeIcon icon={faPlus} />
+          <button className="button addBtn" onClick={addToBasket}>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
         </div>
       </div>
     </div>
