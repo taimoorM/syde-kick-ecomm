@@ -194,6 +194,10 @@ template {
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -269,4 +273,20 @@ template {
   height: 400px;
   padding: 50px 0;
   color: #fff;
+}
+
+.ProductGrid ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.productInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productImg img {
+  max-width: 100%;
 }
