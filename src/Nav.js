@@ -4,11 +4,13 @@ import {
   faBagShopping,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { useBasket } from "./Context";
-import { useContext } from "react";
+import { BasketProvider, useBasket } from "./Context";
+import { getQuantityTotal } from "./utility";
 
 const Nav = () => {
   const { basket } = useBasket();
+
+  const basketQuantity = getQuantityTotal(basket);
 
   return (
     <nav className="Nav">
@@ -31,7 +33,7 @@ const Nav = () => {
         <ul className="searchIcons">
           <FontAwesomeIcon icon={faUser} />
           <FontAwesomeIcon icon={faBagShopping} />
-          {/* <span>{basket.length}</span> */}
+          <span>{basketQuantity}</span>
         </ul>
       </div>
     </nav>

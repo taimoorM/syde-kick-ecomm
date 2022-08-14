@@ -3,7 +3,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
 
 const Product = ({ shoe }) => {
-  const { id, img, title, discount, price } = shoe;
+  const { id, img, title, discount, price, brand } = shoe;
   const newPrice = price - price * discount;
 
   const { basket, dispatch } = useBasket();
@@ -14,6 +14,7 @@ const Product = ({ shoe }) => {
       item: {
         id,
         title,
+        brand,
         price,
         discount,
       },
