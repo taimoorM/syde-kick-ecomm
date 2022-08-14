@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import firebase from "./firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { BasketContext } from "./Context";
@@ -26,9 +27,15 @@ function App() {
   return (
     <BasketContext.Provider value={{ basket, setBasket }}>
       <Nav />
-      <Header />
-      <Categories products={products} />
-      <ProductGrid products={products} />
+      <Routes>
+        <Route path="/">
+          <Header />
+          <Categories products={products} />
+          <ProductGrid products={products} />
+        </Route>
+        <Route path="/category" element={<Categories />} />
+        <Route path="/category:cat" />
+      </Routes>
     </BasketContext.Provider>
   );
 }

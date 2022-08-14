@@ -9,8 +9,15 @@ const Product = ({ shoe }) => {
   const { basket, setBasket } = useContext(BasketContext);
 
   const addToBasket = () => {
-    setBasket([...basket, shoe]);
+    // if (basket. ) {
+    //   const qty = shoe.qty + 1;
+    //   setBasket([...basket, { ...shoe, qty: qty }]);
+    // } else {
+    //   setBasket([...basket, { ...shoe, qty: 1 }]);
+    // }
   };
+
+  console.log(basket);
 
   return (
     <div className="Product">
