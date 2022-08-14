@@ -1,23 +1,13 @@
 import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { BasketContext } from "./Context";
+import { useBasket } from "./Context";
 
 const Product = ({ shoe }) => {
   const { img, title, discount, price } = shoe;
   const newPrice = price - price * discount;
-  const { basket, setBasket } = useContext(BasketContext);
 
-  const addToBasket = () => {
-    // if (basket. ) {
-    //   const qty = shoe.qty + 1;
-    //   setBasket([...basket, { ...shoe, qty: qty }]);
-    // } else {
-    //   setBasket([...basket, { ...shoe, qty: 1 }]);
-    // }
-  };
-
-  console.log(basket);
+  const { basket, dispatch } = useBasket;
 
   return (
     <div className="Product">

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import firebase from "./firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
-import { BasketContext } from "./Context";
+import { BasketProvider } from "./Context";
 import Nav from "./Nav";
 import Header from "./Header";
 import ProductGrid from "./ProductGrid";
@@ -25,7 +25,7 @@ function App() {
     });
   }, []);
   return (
-    <BasketContext.Provider value={{ basket, setBasket }}>
+    <BasketProvider>
       <Nav />
       <Routes>
         <Route path="/">
@@ -36,7 +36,7 @@ function App() {
         <Route path="/category" element={<Categories />} />
         <Route path="/category:cat" />
       </Routes>
-    </BasketContext.Provider>
+    </BasketProvider>
   );
 }
 
