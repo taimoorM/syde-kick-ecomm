@@ -8,10 +8,10 @@ import Nav from "./Nav";
 import Header from "./Header";
 import ProductGrid from "./ProductGrid";
 import Categories from "./Categories";
+import Home from "./routes/Home";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     //holding the database details
@@ -28,13 +28,10 @@ function App() {
     <BasketProvider>
       <Nav />
       <Routes>
-        <Route path="/">
-          <Header />
-          <Categories products={products} />
-          <ProductGrid products={products} />
-        </Route>
+        <Route path="/" element={<Home products={products} />} />
+
         <Route path="/category" element={<Categories />} />
-        <Route path="/category:cat" />
+        {/* <Route path="/category:cat" /> */}
       </Routes>
     </BasketProvider>
   );
