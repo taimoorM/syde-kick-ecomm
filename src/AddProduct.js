@@ -39,7 +39,7 @@ const AddProduct = ({ product, handleClose }) => {
         X
       </button>
       <div className="productImg">
-        <img src={product.img} alt={product.title} />
+        <img src={`/assets/${img}`} alt={product.title} />
       </div>
       <div className="productDetails">
         <h2>{product.title}</h2>

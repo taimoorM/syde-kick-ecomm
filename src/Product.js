@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useBasket } from "./Context";
 import { useState } from "react";
 import ProductModal from "./ProductModal";
 import AddProduct from "./AddProduct";
 
 const Product = ({ product }) => {
-  const { id, img, title, discount, price, brand } = product;
+  const { img, title, discount, price } = product;
   const newPrice = price - price * discount;
 
   const [show, setShow] = useState(false);
@@ -18,10 +17,7 @@ const Product = ({ product }) => {
   return (
     <div className="Product">
       <div className="productImg">
-        <img
-          src="https://m.media-amazon.com/images/I/614vLDZWsAL._AC_UY695_.jpg"
-          alt=""
-        />
+        <img src={`./assets${img}`} alt="" />
       </div>
       <div className="productInner">
         <div className="productInfo">
