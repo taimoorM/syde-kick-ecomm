@@ -1,7 +1,9 @@
-const AddProduct = ({ product }) => {
+const AddProduct = ({ product, handleClose }) => {
   return (
     <div className="AddProduct">
-      <button className="closeBtn">X</button>
+      <button className="closeBtn" onClick={handleClose}>
+        X
+      </button>
       <div className="productImg">
         <img src={product.img} alt={product.title} />
       </div>
@@ -10,6 +12,9 @@ const AddProduct = ({ product }) => {
 
         <div className="productBrand">
           <span>Brand: {product.brand}</span>
+        </div>
+        <div className="productPrice">
+          <span>{product.price}</span>
         </div>
         <form className="productForm">
           <fieldset className="sizeField">
@@ -34,7 +39,7 @@ const AddProduct = ({ product }) => {
               return (
                 <div>
                   <label htmlFor={colour}>{colour}</label>
-                  <input type="radio" id={colour} />
+                  <input type="radio" id={colour} name="colour" />
                   <label htmlFor={colour}>{colour}</label>
                 </div>
               );

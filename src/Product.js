@@ -1,12 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
+import { useState } from "react";
+import ProductModal from "./ProductModal";
+import AddProduct from "./AddProduct";
 
-const Product = ({ shoe }) => {
-  const { id, img, title, discount, price, brand } = shoe;
+const Product = ({ product }) => {
+  const { id, img, title, discount, price, brand } = product;
   const newPrice = price - price * discount;
 
   const { basket, dispatch } = useBasket();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
 
   const addToBasket = () => {
     dispatch({
@@ -36,9 +44,14 @@ const Product = ({ shoe }) => {
           <p className="productPrice">{newPrice.toFixed(2)}</p>
         </div>
         <div className="addBasket">
-          <button className="button addBtn" onClick={addToBasket}>
+          <button className="button addBtn" onClick={() => setShow(true)}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
+          {show && (
+            <ProductModal show={show}>
+              <AddProduct product={product} handleClose={handleClose} />
+            </ProductModal>
+          )}
         </div>
       </div>
     </div>
