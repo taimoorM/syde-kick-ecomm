@@ -268,7 +268,7 @@ li {
 }
 
 .header {
-  background-image: url("./assets/header-bg.jpg");
+  background-image: url("../public/assets/header-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
