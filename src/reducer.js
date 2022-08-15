@@ -3,12 +3,19 @@ function reducer(state, action) {
     //add item to basket
     case "addToBasket": {
       //find item in basket
-      const existsInBasket = state.find((item) => item.id === action.item.id);
+      const existsInBasket = state.find(
+        (item) =>
+          item.id === action.item.id &&
+          item.sizeChoice === action.item.sizeChoice &&
+          item.ColourChoice === action.item.ColourChoice
+      );
 
       //if the item already exists in basket go through basket and increase the quantity of the existing item by 1
       if (existsInBasket) {
         return state.map((item) =>
-          item.id === action.item.id
+          item.id === action.item.id &&
+          item.sizeChoice === action.item.sizeChoice &&
+          item.ColourChoice === action.item.ColourChoice
             ? { ...existsInBasket, quantity: existsInBasket.quantity + 1 }
             : item
         );

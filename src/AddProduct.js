@@ -4,7 +4,7 @@ import { useBasket } from "./Context";
 const AddProduct = ({ product, handleClose }) => {
   const { id, img, title, discount, price, brand } = product;
   const { basket, dispatch } = useBasket();
-  const [sizeChoice, setSizeChoice] = useState("");
+  const [sizeChoice, setSizeChoice] = useState("choose");
   const [colourChoice, setColourChoice] = useState("");
 
   const handleSizeChoice = (e) => {
@@ -59,7 +59,7 @@ const AddProduct = ({ product, handleClose }) => {
               value={sizeChoice}
               onChange={(e) => handleSizeChoice(e)}
             >
-              <option value="choose" disabled selected>
+              <option value="choose" disabled>
                 Choose:
               </option>
               <option value="5">5</option>
