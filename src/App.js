@@ -5,8 +5,6 @@ import firebase from "./firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { BasketProvider } from "./Context";
 import Nav from "./Nav";
-import Header from "./Header";
-import ProductGrid from "./ProductGrid";
 import Categories from "./Categories";
 import Home from "./routes/Home";
 
