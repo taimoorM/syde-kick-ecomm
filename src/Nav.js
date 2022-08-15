@@ -4,7 +4,7 @@ import {
   faBagShopping,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { BasketProvider, useBasket } from "./Context";
+import { useBasket } from "./Context";
 import { getQuantityTotal } from "./utility";
 
 const Nav = () => {

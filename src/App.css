@@ -218,6 +218,8 @@ li {
 }
 
 .Nav {
+  position: sticky;
+  top: 30px;
   width: 90%;
   margin: 30px auto;
   border: 1px solid #000;

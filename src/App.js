@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home products={products} />} />
 
-        <Route path="/category" element={<Categories />} />
+        <Route path="/category" element={<Categories products={products} />} />
         {/* <Route path="/category:cat" /> */}
       </Routes>
     </BasketProvider>
