@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Categories = ({ products }) => {
   const categoryList = [];
   products.forEach((product) => {
@@ -14,7 +16,9 @@ const Categories = ({ products }) => {
           return (
             <ul>
               <li>
-                <h3>{category}</h3>
+                <Link to={`/category/${category}`}>
+                  <h3>{category}</h3>
+                </Link>
               </li>
             </ul>
           );

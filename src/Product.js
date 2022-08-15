@@ -9,25 +9,10 @@ const Product = ({ product }) => {
   const { id, img, title, discount, price, brand } = product;
   const newPrice = price - price * discount;
 
-  const { basket, dispatch } = useBasket();
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-  };
-
-  const addToBasket = () => {
-    dispatch({
-      type: "addToBasket",
-      item: {
-        id,
-        title,
-        brand,
-        price,
-        discount,
-      },
-    });
-    console.log(basket);
   };
 
   return (

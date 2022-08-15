@@ -7,6 +7,8 @@ import { BasketProvider } from "./Context";
 import Nav from "./Nav";
 import Categories from "./Categories";
 import Home from "./routes/Home";
+import Category from "./Category";
+import Footer from "./Footer";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -28,9 +30,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home products={products} />} />
 
-        <Route path="/category" element={<Categories products={products} />} />
-        {/* <Route path="/category:cat" /> */}
+        <Route
+          path="/categories"
+          element={<Categories products={products} />}
+        />
+        <Route
+          path="/category/:cat"
+          element={<Category products={products} />}
+        />
       </Routes>
+      <Footer />
     </BasketProvider>
   );
 }
