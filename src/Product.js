@@ -6,6 +6,7 @@ import AddProduct from "./AddProduct";
 
 const Product = ({ product }) => {
   const { img, title, discount, price } = product;
+  console.log(img);
   const newPrice = price - price * discount;
 
   const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ const Product = ({ product }) => {
   return (
     <div className="Product">
       <div className="productImg">
-        <img src={`./assets${img}`} alt="" />
+        <img src={`./assets/${img[Object.keys(img)[0]]}`} alt="" />
       </div>
       <div className="productInner">
         <div className="productInfo">
