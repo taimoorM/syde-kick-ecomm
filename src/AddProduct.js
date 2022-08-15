@@ -1,4 +1,38 @@
+import { useState } from "react";
+import { useBasket } from "./Context";
+
 const AddProduct = ({ product, handleClose }) => {
+  const { id, img, title, discount, price, brand } = product;
+  const { basket, dispatch } = useBasket();
+  const [sizeChoice, setSizeChoice] = useState("");
+  const [colourChoice, setColourChoice] = useState("");
+
+  const handleSizeChoice = (e) => {
+    setSizeChoice(e.target.value);
+  };
+
+  const handleCoulorChoice = (e) => {
+    setColourChoice(e.target.value);
+  };
+
+  const addToBasket = (e) => {
+    e.preventDefault();
+
+    dispatch({
+      type: "addToBasket",
+      item: {
+        id,
+        title,
+        brand,
+        price,
+        discount,
+        colourChoice,
+        sizeChoice,
+      },
+    });
+    handleClose();
+    console.log(basket);
+  };
   return (
     <div className="AddProduct">
       <button className="closeBtn" onClick={handleClose}>
@@ -19,8 +53,15 @@ const AddProduct = ({ product, handleClose }) => {
         <form className="productForm">
           <fieldset className="sizeField">
             <label htmlFor="size">Pick your size:</label>
-            <select name="size" id="size">
-              <option value="Choose" disabled selected></option>
+            <select
+              name="size"
+              id="size"
+              value={sizeChoice}
+              onChange={(e) => handleSizeChoice(e)}
+            >
+              <option value="choose" disabled selected>
+                Choose:
+              </option>
               <option value="5">5</option>
               <option value="6">6</option>
               <option value="7">7</option>
@@ -39,13 +80,19 @@ const AddProduct = ({ product, handleClose }) => {
               return (
                 <div>
                   <label htmlFor={colour}>{colour}</label>
-                  <input type="radio" id={colour} name="colour" />
-                  <label htmlFor={colour}>{colour}</label>
+                  <input
+                    type="radio"
+                    id={colour}
+                    name="colour"
+                    value={colour}
+                    onChange={(e) => handleCoulorChoice(e)}
+                    checked={colourChoice === colour}
+                  />
                 </div>
               );
             })}
           </fieldset>
-          <button>Add to Basket</button>
+          <button onClick={addToBasket}>Add to Basket</button>
         </form>
       </div>
     </div>
