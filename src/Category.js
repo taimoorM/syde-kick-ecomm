@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 
 const Category = ({ category }) => {
   return (
-    <li>
-      <Link to={`/category/${category}`}>
-        <h3>{category}</h3>
-      </Link>
+    <li
+      className="Category"
+      style={{
+        backgroundImage: `url("${process.env.PUBLIC_URL}/assets/${category}-bg.jpg")`,
+      }}
+    >
+      <Link to={`/category/${category}`}>{category}</Link>
     </li>
   );
 };
