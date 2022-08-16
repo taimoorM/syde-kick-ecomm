@@ -9,7 +9,6 @@ import Categories from "./Categories";
 import Home from "./routes/Home";
 import CategoryPage from "./CategoryPage";
 import Footer from "./Footer";
-import Brand from "./Brand";
 import BrandPage from "./BrandPage";
 
 function App() {

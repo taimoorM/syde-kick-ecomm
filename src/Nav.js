@@ -14,6 +14,9 @@ const Nav = () => {
   const [openBasket, setOpenBasket] = useState(false);
 
   const basketQuantity = getQuantityTotal(basket);
+  const closeBasket = () => {
+    setOpenBasket(false);
+  };
 
   return (
     <nav className="Nav">
@@ -41,7 +44,7 @@ const Nav = () => {
               setOpenBasket(!openBasket);
             }}
           />
-          {openBasket && <Basket openBasket={openBasket} />}
+          {openBasket && <Basket closeBasket={closeBasket} />}
           <span>{basketQuantity}</span>
         </ul>
       </div>

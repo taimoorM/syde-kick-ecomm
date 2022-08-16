@@ -1,3 +1,9 @@
+/* 
+#F0F7F4 
+#252627
+#A30B37
+*/
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -5,6 +11,8 @@ html {
 }
 body {
   margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f0f7f4;
 }
 article,
 aside,
@@ -198,6 +206,13 @@ li {
   list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -225,6 +240,7 @@ li {
   border: 1px solid #000;
   border-radius: 50px;
   z-index: 10;
+  background-color: #fff;
 }
 
 .Nav .wrapper {
@@ -322,6 +338,10 @@ li {
   border-radius: 10px;
 }
 
+.basketList {
+  padding: 0;
+}
+
 .BasketItem {
   width: 100%;
   padding: 20px;
@@ -361,5 +381,29 @@ li {
 }
 
 .itemSpecs {
-  margin-top: -40px;
+  margin-top: -25px;
+}
+
+.itemSpecs span {
+  font-size: 0.9rem;
+}
+
+.itemColour,
+.itemSize {
+  margin-right: 5px;
+}
+
+.sizeLabel,
+.colourLabel {
+  font-weight: bold;
+}
+
+.subtotal {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.subtotal span {
+  font-weight: bold;
+  color: #a30b37;
 }

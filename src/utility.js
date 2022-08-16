@@ -8,3 +8,13 @@ export const getQuantityTotal = (basket) => {
 
   return totalQuantity;
 };
+
+export const getBasketTotal = (basket) => {
+  let total = 0;
+
+  basket.forEach((item) => {
+    total += item.price + item.quantity;
+  });
+
+  return total;
+};

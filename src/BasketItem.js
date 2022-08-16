@@ -4,12 +4,14 @@ import { useBasket } from "./Context";
 
 const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
   const { dispatch } = useBasket();
+
   const handleRemove = () => {
     dispatch({
       type: "removeFromBasket",
       idx: idx,
     });
   };
+
   return (
     <li className="BasketItem">
       <div className="itemThumbnail">
