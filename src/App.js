@@ -7,8 +7,9 @@ import { BasketProvider } from "./Context";
 import Nav from "./Nav";
 import Categories from "./Categories";
 import Home from "./routes/Home";
-import Category from "./Category";
+import CategoryPage from "./CategoryPage";
 import Footer from "./Footer";
+import Brand from "./Brand";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -36,8 +37,9 @@ function App() {
         />
         <Route
           path="/category/:cat"
-          element={<Category products={products} />}
+          element={<CategoryPage products={products} />}
         />
+        <Route path="/brand/:brand" element={<Brand products={products} />} />
       </Routes>
       <Footer />
     </BasketProvider>

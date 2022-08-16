@@ -1,29 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import Product from "./Product";
+import { Link } from "react-router-dom";
 
-const Category = ({ products }) => {
-  const { cat } = useParams();
-  const categoryProducts = [];
-  products.forEach((product) => {
-    if (product.category === cat) {
-      categoryProducts.push(product);
-    }
-  });
-
-  console.log(categoryProducts);
-
+const Category = ({ category }) => {
   return (
-    <div className="wrapper">
-      <div className="Category">
-        <h2>{`${cat} Footwear`}</h2>
-      </div>
-      <ul className="products">
-        {categoryProducts.map((product) => (
-          <Product product={product} key={product.id} />
-        ))}
-      </ul>
-    </div>
+    <li>
+      <Link to={`/category/${category}`}>
+        <h3>{category}</h3>
+      </Link>
+    </li>
   );
 };
 

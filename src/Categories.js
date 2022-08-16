@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Category from "./Category";
 
 const Categories = ({ products }) => {
   const categoryList = [];
@@ -9,22 +9,16 @@ const Categories = ({ products }) => {
   });
 
   return (
-    <div className="Categories">
+    <section className="Categories">
       <div className="wrapper">
-        <h2>Shop by Category</h2>
-        {categoryList.map((category) => {
-          return (
-            <ul>
-              <li>
-                <Link to={`/category/${category}`}>
-                  <h3>{category}</h3>
-                </Link>
-              </li>
-            </ul>
-          );
-        })}
+        <h2 className="sectionHeading">Shop by Category</h2>
+        <ul className="categoryList">
+          {categoryList.map((category) => (
+            <Category category={category} />
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

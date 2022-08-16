@@ -41,11 +41,7 @@ const AddProduct = ({ product, closeModal }) => {
       </button>
       <div className="productImg">
         <img
-          src={
-            colourChoice
-              ? `${process.env.PUBLIC_URL}/assets${img[colourChoice]}`
-              : `${process.env.PUBLIC_URL}/assets${img[Object.keys(img)[0]]}`
-          }
+          src={`${process.env.PUBLIC_URL}/assets${img[colourChoice]}`}
           alt={product.title}
         />
       </div>
@@ -58,7 +54,7 @@ const AddProduct = ({ product, closeModal }) => {
         <div className="productPrice">
           <span>{product.price}</span>
         </div>
-        <form className="productForm">
+        <form className="productForm" onSubmit={addToBasket}>
           <fieldset className="sizeField">
             <label htmlFor="size">Pick your size:</label>
             <select
@@ -66,6 +62,7 @@ const AddProduct = ({ product, closeModal }) => {
               id="size"
               value={sizeChoice}
               onChange={(e) => handleSizeChoice(e)}
+              required
             >
               <option value="choose" disabled>
                 Choose:
@@ -95,12 +92,13 @@ const AddProduct = ({ product, closeModal }) => {
                     value={colour}
                     onChange={(e) => handleCoulorChoice(e)}
                     checked={colourChoice === colour}
+                    required
                   />
                 </div>
               );
             })}
           </fieldset>
-          <button onClick={addToBasket}>Add to Basket</button>
+          <button type="submit">Add to Basket</button>
         </form>
       </div>
     </div>
