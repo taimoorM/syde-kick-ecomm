@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 
 const Brand = ({ brand }) => {
+  const brandPath = brand.toLowerCase().replaceAll(" ", "-");
   return (
-    <li>
-      <Link to={`/brand/${brand}`}>
-        <h3>{brand}</h3>
+    <li className="Brand">
+      <Link to={`/brand/${brandPath}`}>
+        <div className="brandLogo">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/${brandPath}-logo.png`}
+            alt={brand}
+          />
+        </div>
       </Link>
     </li>
   );

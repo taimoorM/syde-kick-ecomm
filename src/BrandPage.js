@@ -5,8 +5,9 @@ import Product from "./Product";
 const BrandPage = ({ products }) => {
   const { brand } = useParams();
   const brandProducts = [];
+  const brandTitle = brand.split("-").join(" ");
   products.forEach((product) => {
-    if (product.brand === brand) {
+    if (product.brand === brandTitle) {
       brandProducts.push(product);
     }
   });
@@ -14,7 +15,7 @@ const BrandPage = ({ products }) => {
   return (
     <section className="CategoryPage">
       <div className="wrapper">
-        <h2 className="pageTitle">{`${brand}`}</h2>
+        <h2 className="pageTitle">{`${brandTitle}`}</h2>
 
         <ul className="products">
           {brandProducts.map((product) => (
