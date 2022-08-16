@@ -1,7 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRemove } from "@fortawesome/free-solid-svg-icons";
+import { useBasket } from "./Context";
 
-const BasketItem = ({ img, colour, size, price, quantity, title }) => {
+const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
+  const { dispatch } = useBasket();
+  const handleRemove = () => {
+    dispatch({
+      type: "removeFromBasket",
+      idx: idx,
+    });
+  };
   return (
     <li className="BasketItem">
       <div className="itemThumbnail">
@@ -24,7 +32,7 @@ const BasketItem = ({ img, colour, size, price, quantity, title }) => {
         </div>
       </div>
       <button className="deleteItemBtn">
-        <FontAwesomeIcon icon={faRemove} />
+        <FontAwesomeIcon icon={faRemove} onClick={handleRemove} />
       </button>
     </li>
   );

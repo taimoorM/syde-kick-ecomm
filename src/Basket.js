@@ -2,14 +2,14 @@ import BasketItem from "./BasketItem";
 import { useBasket } from "./Context";
 
 export const Basket = () => {
-  const { basket, dispatch } = useBasket();
+  const { basket } = useBasket();
 
   return (
     <ul class="Basket">
       {basket.length === 0 ? (
         <p>You have no items in the basket.</p>
       ) : (
-        basket.map((item) => {
+        basket.map((item, idx) => {
           return (
             <BasketItem
               title={item.title}
@@ -18,6 +18,7 @@ export const Basket = () => {
               size={item.sizeChoice}
               quantity={item.quantity}
               price={item.price}
+              idx={idx}
             />
           );
         })
