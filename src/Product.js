@@ -6,22 +6,28 @@ import AddProduct from "./AddProduct";
 
 const Product = ({ product }) => {
   const { img, title, discount, price } = product;
-
-  const newPrice = price - price * discount;
-
   const [show, setShow] = useState(false);
+  const [hover, setHover] = useState(false);
+  const newPrice = price - price * discount;
+  const imagePrimary = `${process.env.PUBLIC_URL}/assets${
+    img[Object.keys(img)[0]]
+  }`;
+  const imageSecondary = `${process.env.PUBLIC_URL}/assets${
+    img[Object.keys(img)[1]]
+  }`;
 
   const handleClose = () => {
     setShow(false);
   };
 
   return (
-    <div className="Product">
+    <li
+      className="Product"
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+    >
       <div className="productImg">
-        <img
-          src={`${process.env.PUBLIC_URL}/assets${img[Object.keys(img)[0]]}`}
-          alt=""
-        />
+        <img src={hover ? imageSecondary : imagePrimary} alt="{title}" />
       </div>
       <div className="productInner">
         <div className="productInfo">
@@ -39,7 +45,7 @@ const Product = ({ product }) => {
           )}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
