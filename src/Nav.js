@@ -6,9 +6,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
 import { getQuantityTotal } from "./utility";
+import { Basket } from "./Basket";
+import { useState } from "react";
 
 const Nav = () => {
   const { basket } = useBasket();
+  const [openBasket, setOpenBasket] = useState(false);
 
   const basketQuantity = getQuantityTotal(basket);
 
@@ -32,7 +35,13 @@ const Nav = () => {
         </form>
         <ul className="searchIcons">
           <FontAwesomeIcon icon={faUser} />
-          <FontAwesomeIcon icon={faBagShopping} />
+          <FontAwesomeIcon
+            icon={faBagShopping}
+            onClick={() => {
+              setOpenBasket(!openBasket);
+            }}
+          />
+          {openBasket && <Basket openBasket={openBasket} />}
           <span>{basketQuantity}</span>
         </ul>
       </div>
