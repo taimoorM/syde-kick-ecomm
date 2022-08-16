@@ -10,6 +10,7 @@ import Home from "./routes/Home";
 import CategoryPage from "./CategoryPage";
 import Footer from "./Footer";
 import Brand from "./Brand";
+import BrandPage from "./BrandPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,10 @@ function App() {
           path="/category/:cat"
           element={<CategoryPage products={products} />}
         />
-        <Route path="/brand/:brand" element={<Brand products={products} />} />
+        <Route
+          path="/brand/:brand"
+          element={<BrandPage products={products} />}
+        />
       </Routes>
       <Footer />
     </BasketProvider>

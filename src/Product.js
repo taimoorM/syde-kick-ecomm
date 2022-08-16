@@ -27,8 +27,8 @@ const Product = ({ product }) => {
   return (
     <li
       className="Product"
-      onMouseOver={() => setHover(true)}
-      onMouseOut={() => setHover(false)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <div className="productImg">
         <img src={hover ? imageSecondary : imagePrimary} alt="{title}" />

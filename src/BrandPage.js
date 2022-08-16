@@ -2,24 +2,22 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Product from "./Product";
 
-const CategoryPage = ({ products }) => {
-  const { cat } = useParams();
-  const categoryProducts = [];
+const BrandPage = ({ products }) => {
+  const { brand } = useParams();
+  const brandProducts = [];
   products.forEach((product) => {
-    if (product.category === cat) {
-      categoryProducts.push(product);
+    if (product.brand === brand) {
+      brandProducts.push(product);
     }
   });
-
-  console.log(categoryProducts);
 
   return (
     <section className="CategoryPage">
       <div className="wrapper">
-        <h2 className="pageTitle">{`${cat} Footwear`}</h2>
+        <h2 className="pageTitle">{`${brand}`}</h2>
 
         <ul className="products">
-          {categoryProducts.map((product) => (
+          {brandProducts.map((product) => (
             <Product product={product} key={product.id} />
           ))}
         </ul>
@@ -28,4 +26,4 @@ const CategoryPage = ({ products }) => {
   );
 };
 
-export default CategoryPage;
+export default BrandPage;
