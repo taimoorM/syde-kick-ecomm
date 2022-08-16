@@ -20,9 +20,7 @@ const Category = ({ products }) => {
       </div>
       <ul className="products">
         {categoryProducts.map((product) => (
-          <li key={product.id}>
-            <Product product={product} />
-          </li>
+          <Product product={product} key={product.id} />
         ))}
       </ul>
     </div>

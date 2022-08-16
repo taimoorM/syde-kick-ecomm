@@ -8,7 +8,9 @@ const Product = ({ product }) => {
   const { img, title, discount, price } = product;
   const [isOpen, setIsOpen] = useState(false);
   const [hover, setHover] = useState(false);
+
   const newPrice = price - price * discount;
+
   const imagePrimary = `${process.env.PUBLIC_URL}/assets${
     img[Object.keys(img)[0]]
   }`;
@@ -41,8 +43,8 @@ const Product = ({ product }) => {
             <FontAwesomeIcon icon={faPlus} />
           </button>
 
-          <Modal isOpen={isOpen} onRequestClose={closeModal}>
-            <AddProduct product={product} />
+          <Modal isOpen={isOpen}>
+            <AddProduct product={product} closeModal={closeModal} />
           </Modal>
         </div>
       </div>

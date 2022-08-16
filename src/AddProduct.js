@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useBasket } from "./Context";
 
-const AddProduct = ({ product, handleClose }) => {
+const AddProduct = ({ product, closeModal }) => {
   const { id, img, title, discount, price, brand } = product;
   const { basket, dispatch } = useBasket();
   const [sizeChoice, setSizeChoice] = useState("choose");
-  const [colourChoice, setColourChoice] = useState("");
+  const [colourChoice, setColourChoice] = useState(Object.keys(img)[0]);
 
   const handleSizeChoice = (e) => {
     setSizeChoice(e.target.value);
@@ -24,22 +24,30 @@ const AddProduct = ({ product, handleClose }) => {
         id,
         title,
         brand,
-        price,
+        price: price - price * discount,
         discount,
         colourChoice,
         sizeChoice,
+        img: product.img[colourChoice],
       },
     });
-    handleClose();
+    closeModal();
     console.log(basket);
   };
   return (
     <div className="AddProduct">
-      <button className="closeBtn" onClick={handleClose}>
+      <button className="closeBtn" onClick={closeModal}>
         X
       </button>
       <div className="productImg">
-        <img src={`/assets/${img}`} alt={product.title} />
+        <img
+          src={
+            colourChoice
+              ? `${process.env.PUBLIC_URL}/assets${img[colourChoice]}`
+              : `${process.env.PUBLIC_URL}/assets${img[Object.keys(img)[0]]}`
+          }
+          alt={product.title}
+        />
       </div>
       <div className="productDetails">
         <h2>{product.title}</h2>
