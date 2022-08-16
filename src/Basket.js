@@ -1,13 +1,15 @@
 import BasketItem from "./BasketItem";
 import { useBasket } from "./Context";
 
-export const Basket = ({ openBasket }) => {
+export const Basket = () => {
   const { basket, dispatch } = useBasket();
 
   return (
-    <div className="Basket">
-      <ul class="basketItems">
-        {basket.map((item) => {
+    <ul class="Basket">
+      {basket.length === 0 ? (
+        <p>You have no items in the basket.</p>
+      ) : (
+        basket.map((item) => {
           return (
             <BasketItem
               title={item.title}
@@ -18,8 +20,8 @@ export const Basket = ({ openBasket }) => {
               price={item.price}
             />
           );
-        })}
-      </ul>
-    </div>
+        })
+      )}
+    </ul>
   );
 };

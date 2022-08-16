@@ -224,6 +224,7 @@ li {
   margin: 30px auto;
   border: 1px solid #000;
   border-radius: 50px;
+  z-index: 10;
 }
 
 .Nav .wrapper {
@@ -308,4 +309,57 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Basket {
+  position: absolute;
+  width: 500px;
+  top: 50px;
+  right: 0;
+  padding: 0;
+  border: 1px solid #888;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.BasketItem {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.BasketItem:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+
+.BasketItem h3 {
+  margin: 0;
+}
+
+.itemThumbnail {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.itemThumbnail img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.deleteItemBtn {
+  align-self: center;
+  margin-left: auto;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.itemSpecs {
+  margin-top: -40px;
 }
