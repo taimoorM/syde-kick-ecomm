@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import ProductModal from "./ProductModal";
+import Modal from "react-modal";
 import AddProduct from "./AddProduct";
 
 const Product = ({ product }) => {
   const { img, title, discount, price } = product;
-  const [show, setShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [hover, setHover] = useState(false);
   const newPrice = price - price * discount;
   const imagePrimary = `${process.env.PUBLIC_URL}/assets${
@@ -15,9 +15,11 @@ const Product = ({ product }) => {
   const imageSecondary = `${process.env.PUBLIC_URL}/assets${
     img[Object.keys(img)[1]]
   }`;
-
-  const handleClose = () => {
-    setShow(false);
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -35,14 +37,13 @@ const Product = ({ product }) => {
           <p className="productPrice">{newPrice.toFixed(2)}</p>
         </div>
         <div className="addBasket">
-          <button className="button addBtn" onClick={() => setShow(true)}>
+          <button className="button addBtn" onClick={openModal}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
-          {show && (
-            <ProductModal show={show}>
-              <AddProduct product={product} handleClose={handleClose} />
-            </ProductModal>
-          )}
+
+          <Modal isOpen={isOpen} onRequestClose={closeModal}>
+            <AddProduct product={product} />
+          </Modal>
         </div>
       </div>
     </li>
