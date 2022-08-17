@@ -21,7 +21,7 @@ export const Basket = ({ closeBasket }) => {
             {basket.map((item, idx) => {
               return (
                 <BasketItem
-                  key={item.id}
+                  key={`${item.id}${idx}`}
                   title={item.title}
                   img={item.img}
                   colour={item.colourChoice}

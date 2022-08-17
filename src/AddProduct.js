@@ -61,7 +61,7 @@ const AddProduct = ({ product, closeModal }) => {
         </div>
         <form className="productForm" onSubmit={addToBasket}>
           <fieldset className="sizeField">
-            <label htmlFor="size">Pick your size:</label>
+            <label htmlFor="size">Size:</label>
             <select
               name="size"
               id="size"
@@ -82,7 +82,7 @@ const AddProduct = ({ product, closeModal }) => {
             </select>
           </fieldset>
           <fieldset className="colourField">
-            <legend>Pick your colour:</legend>
+            <legend>Colour:</legend>
             {product.colours.map((colour, idx) => {
               return (
                 <div key={idx}>

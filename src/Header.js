@@ -4,7 +4,9 @@ const Header = () => {
       <div className="wrapper">
         <h2>Syde Kicks</h2>
         <p>Lorem ipsum dolor sit amet.</p>
-        <button className="ctaBtn">Shop Now</button>
+        <a href="#collection" className="ctaBtn">
+          Shop Now
+        </a>
       </div>
     </header>
   );

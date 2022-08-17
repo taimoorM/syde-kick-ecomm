@@ -2,7 +2,7 @@ import Product from "./Product";
 
 const ProductGrid = ({ products }) => {
   return (
-    <section className="ProductGrid">
+    <section className="ProductGrid" id="collection">
       <div className="wrapper">
         <h2 className="sectionHeading">Our Collection</h2>
         <ul className="products">
