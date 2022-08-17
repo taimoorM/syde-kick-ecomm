@@ -221,6 +221,12 @@ section {
   padding: 50px 0;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -240,15 +246,18 @@ section {
   margin: 0 auto;
 }
 
+/* Nav Styling */
+
 .Nav {
   position: sticky;
   top: 30px;
   width: 90%;
   margin: 30px auto;
-  border: 1px solid #000;
+
   border-radius: 50px;
   z-index: 10;
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .Nav .wrapper {
@@ -291,6 +300,34 @@ section {
   width: 50px;
   cursor: pointer;
 }
+
+.basketBtn {
+  display: flex;
+  padding: 15px 30px;
+  color: #f0f7f4;
+  background-color: #252627;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basketBtn span {
+  margin-left: 5px;
+}
+
+.basketIcon {
+  color: #f0f7f4;
+}
+
+.navIcons > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f7f4;
+}
+
+/* Header Styling */
 
 .header {
   background-image: url("../public/assets/header-bg.jpg");

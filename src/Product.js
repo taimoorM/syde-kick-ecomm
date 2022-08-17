@@ -43,7 +43,11 @@ const Product = ({ product }) => {
             <FontAwesomeIcon icon={faPlus} />
           </button>
 
-          <Modal isOpen={isOpen}>
+          <Modal
+            isOpen={isOpen}
+            onRequestClose={closeModal}
+            ariaHideApp={false}
+          >
             <AddProduct product={product} closeModal={closeModal} />
           </Modal>
         </div>

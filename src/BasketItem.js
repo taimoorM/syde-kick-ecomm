@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRemove } from "@fortawesome/free-solid-svg-icons";
+import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
 
 const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
@@ -34,7 +34,7 @@ const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
         </div>
       </div>
       <button className="deleteItemBtn">
-        <FontAwesomeIcon icon={faRemove} onClick={handleRemove} />
+        <FontAwesomeIcon icon={faCircleMinus} onClick={handleRemove} />
       </button>
     </li>
   );

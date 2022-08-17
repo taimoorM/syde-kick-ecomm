@@ -1,9 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faBagShopping,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
 import { getQuantityTotal } from "./utility";
 import { Basket } from "./Basket";
@@ -36,16 +32,22 @@ const Nav = () => {
             </button>
           </fieldset>
         </form>
-        <ul className="searchIcons">
-          <FontAwesomeIcon icon={faUser} />
-          <FontAwesomeIcon
-            icon={faBagShopping}
-            onClick={() => {
-              setOpenBasket(!openBasket);
-            }}
-          />
+        <ul className="navIcons">
+          <li>
+            <button
+              onClick={() => setOpenBasket(!openBasket)}
+              className="basketBtn"
+            >
+              <FontAwesomeIcon
+                icon={faBagShopping}
+                size="lg"
+                className="basketIcon"
+              />
+              <span>{basketQuantity}</span>
+            </button>
+          </li>
+
           {openBasket && <Basket closeBasket={closeBasket} />}
-          <span>{basketQuantity}</span>
         </ul>
       </div>
     </nav>
