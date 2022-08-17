@@ -32,7 +32,6 @@ const AddProduct = ({ product, closeModal }) => {
       },
     });
     closeModal();
-    console.log(basket);
   };
   return (
     <div className="AddProduct">

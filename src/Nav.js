@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBagShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
 import { getQuantityTotal } from "./utility";
 import { Basket } from "./Basket";

@@ -1,12 +1,10 @@
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import Product from "./Product";
 
 const BrandPage = ({ products }) => {
-  const [error, setError] = useState(false);
   const { brand } = useParams();
   const brandProducts = [];
   const brandTitle = brand.split("-").join(" ");
