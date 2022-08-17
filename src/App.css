@@ -227,6 +227,15 @@ button {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -420,7 +429,7 @@ button {
 
 /* Header Styling */
 
-.header {
+.Header {
   background-image: url("../public/assets/header-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -428,6 +437,25 @@ button {
   height: 400px;
   padding: 50px 0;
   color: #fff;
+}
+
+.Header h2 {
+  font-size: 4rem;
+  margin: 0 0 15px 0;
+}
+
+.ctaBtn {
+  background-color: #43aa8b;
+  color: #f0f7f4;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  transition: all 0.25s;
+}
+
+.ctaBtn:hover,
+.ctnBtn:focus {
+  background-color: #252627;
 }
 
 .sectionHeading {
@@ -498,6 +526,89 @@ button {
   align-items: center;
 }
 
+/* Modal styling */
+
+.Modal {
+  margin: 150px auto 0 auto;
+  width: 70%;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
+.AddProduct {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.AddProduct .closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.AddProduct .productImg {
+  width: 50%;
+  margin-right: 30px;
+  border: 1px solid #7d8491;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productDetails {
+  width: 50%;
+}
+
+.productDetails h2 {
+  margin: 0;
+}
+
+.productBrand {
+  display: flex;
+  align-items: center;
+}
+
+.productBrand {
+  width: 50px;
+  margin: 10px 0;
+}
+
+.AddProduct .productPrice {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #a30b37;
+}
+
+.productForm label {
+  cursor: pointer;
+}
+
+.sizeField label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.colourField legend {
+  font-weight: bold;
+}
+
+.colourField label {
+  margin-right: 5px;
+}
+
+.productForm fieldset {
+  margin-bottom: 20px;
+}
+
+.productForm .ctaBtn {
+  font-size: 1.2rem;
+  margin: 0;
+}
+/* Brand styles */
 .Brand {
   display: flex;
   justify-content: center;
@@ -518,8 +629,18 @@ button {
 
 .pageTitle {
   text-transform: capitalize;
-  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 50px 0;
 }
+
+.CategoryPage,
+.BrandPage {
+  height: 100vh;
+  min-height: 60px;
+  padding: 0;
+}
+
+/* Category Styles */
 
 .categoryList {
   display: grid;
@@ -547,4 +668,43 @@ button {
   background-color: rgba(255, 255, 255, 0.493);
   font-family: "Barlow Condensed", sans-serif;
   border-radius: 10px;
+}
+
+.CategoryPage a,
+.BrandPage a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #252627;
+  color: #f0f7f4;
+  padding: 5px 10px;
+}
+
+.backLink {
+  margin-right: 5px;
+}
+
+/* Footer Styles */
+
+.Footer {
+  background-color: #43aa8b;
+  color: #f0f7f4;
+  padding-top: 20px;
+}
+
+.Footer h2 {
+  margin: 0 0 20px 0;
+}
+
+.Footer p {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #252627;
+}
+
+.Footer h2 {
+  text-align: center;
 }

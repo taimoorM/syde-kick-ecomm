@@ -4,7 +4,7 @@ import { useBasket } from "./Context";
 const AddProduct = ({ product, closeModal }) => {
   const { id, img, title, discount, price, brand } = product;
   const { basket, dispatch } = useBasket();
-  const [sizeChoice, setSizeChoice] = useState("choose");
+  const [sizeChoice, setSizeChoice] = useState("5");
   const [colourChoice, setColourChoice] = useState(Object.keys(img)[0]);
 
   const handleSizeChoice = (e) => {
@@ -49,10 +49,16 @@ const AddProduct = ({ product, closeModal }) => {
         <h2>{product.title}</h2>
 
         <div className="productBrand">
-          <span>Brand: {product.brand}</span>
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/${product.brand.replaceAll(
+              " ",
+              "-"
+            )}-logo.png`}
+            alt={product.brand}
+          />
         </div>
         <div className="productPrice">
-          <span>{product.price}</span>
+          <span>${product.price}</span>
         </div>
         <form className="productForm" onSubmit={addToBasket}>
           <fieldset className="sizeField">
@@ -64,9 +70,6 @@ const AddProduct = ({ product, closeModal }) => {
               onChange={(e) => handleSizeChoice(e)}
               required
             >
-              <option value="choose" disabled>
-                Choose:
-              </option>
               <option value="5">5</option>
               <option value="6">6</option>
               <option value="7">7</option>
@@ -81,9 +84,9 @@ const AddProduct = ({ product, closeModal }) => {
           </fieldset>
           <fieldset className="colourField">
             <legend>Pick your colour:</legend>
-            {product.colours.map((colour) => {
+            {product.colours.map((colour, idx) => {
               return (
-                <div>
+                <div key={idx}>
                   <label htmlFor={colour}>{colour}</label>
                   <input
                     type="radio"
@@ -98,7 +101,9 @@ const AddProduct = ({ product, closeModal }) => {
               );
             })}
           </fieldset>
-          <button type="submit">Add to Basket</button>
+          <button type="submit" className="ctaBtn">
+            Add to Basket
+          </button>
         </form>
       </div>
     </div>

@@ -1,5 +1,7 @@
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Product from "./Product";
 
 const BrandPage = ({ products }) => {
@@ -22,6 +24,10 @@ const BrandPage = ({ products }) => {
             <Product product={product} key={product.id} />
           ))}
         </ul>
+        <Link to="/">
+          <FontAwesomeIcon className="backLink" icon={faAngleLeft} />
+          Back
+        </Link>
       </div>
     </section>
   );

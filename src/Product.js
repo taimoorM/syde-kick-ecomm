@@ -36,7 +36,7 @@ const Product = ({ product }) => {
       <div className="productInner">
         <div className="productInfo">
           <h3 className="productTitle">{title}</h3>
-          <p className="productPrice">{newPrice.toFixed(2)}</p>
+          <p className="productPrice">${newPrice.toFixed(2)}</p>
         </div>
         <div className="addBasket">
           <button className="button addBtn" onClick={openModal}>
@@ -47,6 +47,7 @@ const Product = ({ product }) => {
             isOpen={isOpen}
             onRequestClose={closeModal}
             ariaHideApp={false}
+            className="Modal"
           >
             <AddProduct product={product} closeModal={closeModal} />
           </Modal>
