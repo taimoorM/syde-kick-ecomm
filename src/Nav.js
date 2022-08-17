@@ -23,17 +23,6 @@ const Nav = () => {
             <h1>SK</h1>
           </Link>
         </div>
-        <form action="" className="searchBar">
-          <fieldset>
-            <label htmlFor="searchBar" className="sr-only">
-              Search for products
-            </label>
-            <input type="text" id="searchBar" />
-            <button className="searchBtn">
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
-          </fieldset>
-        </form>
         <ul className="navIcons">
           <li>
             <button

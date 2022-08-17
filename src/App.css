@@ -3,6 +3,10 @@
 #252627
 #A30B37
 */
+html,
+body {
+  height: 100%;
+}
 
 html {
   line-height: 1.15;
@@ -13,6 +17,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #f0f7f4;
+  position: relative;
 }
 article,
 aside,
@@ -356,6 +361,9 @@ fieldset {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
   min-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
 }
 
 .Basket p {
@@ -383,6 +391,9 @@ fieldset {
 .itemThumbnail {
   width: 150px;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #252627;
   border-radius: 10px;
   margin-right: 20px;
@@ -552,8 +563,8 @@ fieldset {
 
 .AddProduct .closeBtn {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5px;
+  right: -10px;
 }
 .AddProduct .productImg {
   width: 50%;
@@ -641,8 +652,9 @@ fieldset {
 }
 
 .CategoryPage,
-.BrandPage {
-  min-height: 610px;
+.BrandPage,
+.ErrorPage {
+  min-height: 700px;
   padding: 0 0 50px 0;
 }
 
@@ -699,6 +711,7 @@ fieldset {
   background-color: #43aa8b;
   color: #f0f7f4;
   padding-top: 20px;
+  height: 100px;
 }
 
 .Footer h2 {
@@ -717,9 +730,6 @@ fieldset {
 }
 
 /* ErrorPage styles */
-.ErrorPage {
-  min-height: 625px;
-}
 
 .ErrorPage .wrapper {
   display: flex;
@@ -730,4 +740,104 @@ fieldset {
 
 .ErrorPage h2 {
   font-size: 3rem;
+}
+
+/* media queries */
+@media (max-width: 1050px) {
+  .Modal {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .AddProduct {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .AddProduct .productImg {
+    width: 80%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .productDetails {
+    text-align: center;
+    width: 100%;
+  }
+  .productBrand {
+    width: 100%;
+  }
+  .productBrand img {
+    width: 50px;
+    margin: 0 auto;
+  }
+
+  .productForm .ctaBtn {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Basket {
+    width: 100%;
+  }
+
+  .BasketItem {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  section {
+    padding: 20px 0;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .Nav .wrapper {
+    width: 85%;
+  }
+
+  .itemThumbnail {
+    padding: 0;
+    width: 80px;
+    margin-right: 10px;
+  }
+  .itemSpecs {
+    margin: 0 0 5px 0;
+  }
+
+  .categoryList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Categories {
+    margin-top: 30px;
+  }
+
+  .Category {
+    height: 150px;
+  }
+
+  .Brands {
+    margin-top: 255px;
+  }
+  .brandList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Modal {
+    padding: 20px;
+  }
 }
