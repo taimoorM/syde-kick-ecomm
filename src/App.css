@@ -269,6 +269,11 @@ fieldset {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.logo a {
+  text-decoration: none;
+  color: #252627;
+}
+
 .Nav .wrapper {
   display: flex;
   justify-content: space-between;
@@ -565,6 +570,7 @@ fieldset {
 
 .productDetails h2 {
   margin: 0;
+  text-transform: capitalize;
 }
 
 .productBrand {
@@ -635,9 +641,8 @@ fieldset {
 
 .CategoryPage,
 .BrandPage {
-  height: 100vh;
-  min-height: 60px;
-  padding: 0;
+  min-height: 600px;
+  padding: 0 0 50px 0;
 }
 
 /* Category Styles */

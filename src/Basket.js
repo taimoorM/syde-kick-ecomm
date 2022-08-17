@@ -17,10 +17,11 @@ export const Basket = ({ closeBasket }) => {
         <p>You have no items in the basket.</p>
       ) : (
         <>
-          <ul class="basketList">
+          <ul className="basketList">
             {basket.map((item, idx) => {
               return (
                 <BasketItem
+                  key={item.id}
                   title={item.title}
                   img={item.img}
                   colour={item.colourChoice}

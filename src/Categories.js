@@ -13,8 +13,8 @@ const Categories = ({ products }) => {
       <div className="wrapper">
         <h2 className="sectionHeading">Shop by Category</h2>
         <ul className="categoryList">
-          {categoryList.map((category) => (
-            <Category category={category} />
+          {categoryList.map((category, idx) => (
+            <Category category={category} key={idx} />
           ))}
         </ul>
       </div>

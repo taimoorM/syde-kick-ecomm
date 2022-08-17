@@ -4,6 +4,7 @@ import { useBasket } from "./Context";
 import { getQuantityTotal } from "./utility";
 import { Basket } from "./Basket";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const { basket } = useBasket();
@@ -18,8 +19,9 @@ const Nav = () => {
     <nav className="Nav">
       <div className="wrapper">
         <div className="logo">
-          <h1>SK</h1>
-          {/* <img src="" alt="Syde Kicks" /> */}
+          <Link to="/">
+            <h1>SK</h1>
+          </Link>
         </div>
         <form action="" className="searchBar">
           <fieldset>

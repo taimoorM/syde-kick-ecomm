@@ -46,7 +46,7 @@ const AddProduct = ({ product, closeModal }) => {
         />
       </div>
       <div className="productDetails">
-        <h2>{product.title}</h2>
+        <h2>{`${product.brand} ${product.title}`}</h2>
 
         <div className="productBrand">
           <img
