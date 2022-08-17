@@ -10,6 +10,7 @@ import Home from "./routes/Home";
 import CategoryPage from "./CategoryPage";
 import Footer from "./Footer";
 import BrandPage from "./BrandPage";
+import ErrorPage from "./ErrorPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,6 +44,7 @@ function App() {
           path="/brand/:brand"
           element={<BrandPage products={products} />}
         />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </BasketProvider>
