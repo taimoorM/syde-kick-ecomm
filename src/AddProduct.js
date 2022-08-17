@@ -3,7 +3,7 @@ import { useBasket } from "./Context";
 
 const AddProduct = ({ product, closeModal }) => {
   const { id, img, title, discount, price, brand } = product;
-  const { basket, dispatch } = useBasket();
+  const { dispatch } = useBasket();
   const [sizeChoice, setSizeChoice] = useState("5");
   const [colourChoice, setColourChoice] = useState(Object.keys(img)[0]);
 
