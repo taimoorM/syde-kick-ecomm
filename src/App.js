@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import firebase from "./firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { BasketProvider } from "./Context";
@@ -46,6 +47,7 @@ function App() {
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Toaster position="bottom-center" />
       <Footer />
     </BasketProvider>
   );

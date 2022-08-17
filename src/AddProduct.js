@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { useBasket } from "./Context";
 
 const AddProduct = ({ product, closeModal }) => {
@@ -13,6 +14,10 @@ const AddProduct = ({ product, closeModal }) => {
 
   const handleCoulorChoice = (e) => {
     setColourChoice(e.target.value);
+  };
+
+  const notify = () => {
+    toast.success(`${product.title} was added to your basket`);
   };
 
   const addToBasket = (e) => {
@@ -32,6 +37,7 @@ const AddProduct = ({ product, closeModal }) => {
       },
     });
     closeModal();
+    notify();
   };
   return (
     <div className="AddProduct">

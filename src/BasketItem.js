@@ -1,15 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 import { useBasket } from "./Context";
+import toast from "react-hot-toast";
 
 const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
   const { dispatch } = useBasket();
+
+  const notify = () => {
+    toast.success(`${title} was removed from your basket`);
+  };
 
   const handleRemove = () => {
     dispatch({
       type: "removeFromBasket",
       idx: idx,
     });
+    notify();
   };
 
   return (
@@ -33,8 +39,8 @@ const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
           <span className="itemPrice">${price.toFixed(2)}</span>
         </div>
       </div>
-      <button className="deleteItemBtn">
-        <FontAwesomeIcon icon={faCircleMinus} onClick={handleRemove} />
+      <button className="deleteItemBtn" onClick={handleRemove}>
+        <FontAwesomeIcon icon={faCircleMinus} />
       </button>
     </li>
   );
