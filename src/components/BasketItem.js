@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
-import { useBasket } from "./Context";
 import toast from "react-hot-toast";
+import { useBasket } from "../Context";
 
 const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
   const { dispatch } = useBasket();

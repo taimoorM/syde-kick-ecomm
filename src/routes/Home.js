@@ -1,7 +1,7 @@
-import Brands from "../Brands";
-import Categories from "../Categories";
-import Header from "../Header";
-import ProductGrid from "../ProductGrid";
+import Brands from "../components/Brands";
+import Categories from "../components/Categories";
+import Header from "../components/Header";
+import ProductGrid from "../components/ProductGrid";
 
 const Home = ({ products }) => {
   return (

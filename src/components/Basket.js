@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRemove } from "@fortawesome/free-solid-svg-icons";
 import BasketItem from "./BasketItem";
-import { useBasket } from "./Context";
-import { getBasketTotal } from "./utility";
+import { useBasket } from "../Context";
+import { getBasketTotal } from "../utility";
 
-export const Basket = ({ closeBasket }) => {
+const Basket = ({ closeBasket }) => {
   const { basket } = useBasket();
 
   const subTotal = getBasketTotal(basket);
@@ -41,3 +41,5 @@ export const Basket = ({ closeBasket }) => {
     </div>
   );
 };
+
+export default Basket;

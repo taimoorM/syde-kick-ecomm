@@ -1,9 +1,8 @@
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
-import Product from "./Product";
+import Product from "../components/Product";
 
 const CategoryPage = ({ products }) => {
   const { category } = useParams();

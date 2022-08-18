@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useBasket } from "./Context";
+import { useBasket } from "../Context";
 
 const AddProduct = ({ product, closeModal }) => {
   const { id, img, title, discount, price, brand } = product;
@@ -91,8 +91,7 @@ const AddProduct = ({ product, closeModal }) => {
             <legend>Colour:</legend>
             {product.colours.map((colour, idx) => {
               return (
-                <div key={idx}>
-                  <label htmlFor={colour}>{colour}</label>
+                <div className="colourInput" key={idx}>
                   <input
                     type="radio"
                     id={colour}
@@ -102,6 +101,7 @@ const AddProduct = ({ product, closeModal }) => {
                     checked={colourChoice === colour}
                     required
                   />
+                  <label htmlFor={colour}>{colour}</label>
                 </div>
               );
             })}
