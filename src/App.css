@@ -578,11 +578,17 @@ fieldset {
   position: absolute;
   top: -5px;
   right: -10px;
+  color: #f0f7f4;
+  background-color: #43aa8b;
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 .AddProduct .productImg {
   width: 50%;
   margin-right: 30px;
-  border: 1px solid #7d8491;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 5px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -806,7 +812,11 @@ fieldset {
     width: 50px;
     margin: 0 auto;
   }
-
+  .colourField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .productForm .ctaBtn {
     display: block;
     width: 100%;
