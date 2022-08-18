@@ -7,7 +7,7 @@ const BasketItem = ({ img, colour, size, price, quantity, title, idx }) => {
   const { dispatch } = useBasket();
 
   const notify = () => {
-    toast.success(`${title} was removed from your basket`);
+    toast.error(`${title} was removed from your basket`);
   };
 
   const handleRemove = () => {
