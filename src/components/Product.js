@@ -42,16 +42,15 @@ const Product = ({ product }) => {
           <button className="button addBtn" onClick={openModal}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
-          {isOpen ? (
-            <Modal
-              isOpen={isOpen}
-              onRequestClose={closeModal}
-              ariaHideApp={false}
-              className="Modal"
-            >
-              <AddProduct product={product} closeModal={closeModal} />
-            </Modal>
-          ) : null}
+
+          <Modal
+            isOpen={isOpen}
+            onRequestClose={closeModal}
+            ariaHideApp={false}
+            className="Modal"
+          >
+            <AddProduct product={product} closeModal={closeModal} />
+          </Modal>
         </div>
       </div>
     </li>
