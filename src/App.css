@@ -123,6 +123,10 @@ button,
 input {
   overflow: visible;
 }
+input,
+label {
+  cursor: pointer;
+}
 button,
 select {
   text-transform: none;
@@ -621,10 +625,28 @@ fieldset {
 
 .colourField legend {
   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.colourField input[type="radio"] {
+  accent-color: #43aa8b;
+  border: none;
+}
+
+.colourInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  padding: 10px 5px;
+  width: 100px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 .colourField label {
-  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .productForm fieldset {
