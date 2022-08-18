@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useBasket } from "./Context";
+import { useBasket } from "../Context";
 
 const AddProduct = ({ product, closeModal }) => {
   const { id, img, title, discount, price, brand } = product;

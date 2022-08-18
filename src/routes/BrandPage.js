@@ -2,21 +2,22 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, Link } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
-import Product from "./Product";
+import Product from "../components/Product";
 
 const BrandPage = ({ products }) => {
   const { brand } = useParams();
   const brandTitle = brand.split("-").join(" ");
+
+  const brandProducts = products.filter(
+    (product) => product.brand === brandTitle
+  );
+
   const brandList = [];
   products.forEach((product) => {
     if (!brandList.includes(product.brand)) {
       brandList.push(product.brand);
     }
   });
-
-  const brandProducts = products.filter(
-    (product) => product.brand === brandTitle
-  );
 
   return (
     <section className="BrandPage">

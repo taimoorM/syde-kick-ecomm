@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { useBasket } from "./Context";
-import { getQuantityTotal } from "./utility";
-import { Basket } from "./Basket";
+import { useBasket } from "../Context";
+import { getQuantityTotal } from "../utility";
+import Basket from "./Basket";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

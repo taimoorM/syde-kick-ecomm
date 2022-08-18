@@ -5,13 +5,13 @@ import { Toaster } from "react-hot-toast";
 import firebase from "./firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { BasketProvider } from "./Context";
-import Nav from "./Nav";
-import Categories from "./Categories";
+import Nav from "./components/Nav";
+import Categories from "./components/Categories";
+import Footer from "./components/Footer";
 import Home from "./routes/Home";
-import CategoryPage from "./CategoryPage";
-import Footer from "./Footer";
-import BrandPage from "./BrandPage";
-import ErrorPage from "./ErrorPage";
+import CategoryPage from "./routes/CategoryPage";
+import BrandPage from "./routes/BrandPage";
+import ErrorPage from "./routes/ErrorPage";
 
 function App() {
   const [products, setProducts] = useState([]);
