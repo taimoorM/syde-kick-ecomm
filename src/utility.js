@@ -18,3 +18,8 @@ export const getBasketTotal = (basket) => {
 
   return total;
 };
+
+export const filterProducts = (arr, val) => {
+  const newArr = arr.filter((i) => i.val === val);
+  return newArr;
+};

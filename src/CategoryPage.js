@@ -6,13 +6,10 @@ import ErrorPage from "./ErrorPage";
 import Product from "./Product";
 
 const CategoryPage = ({ products }) => {
-  const { cat } = useParams();
-  const categoryProducts = [];
-  products.forEach((product) => {
-    if (product.category === cat) {
-      categoryProducts.push(product);
-    }
-  });
+  const { category } = useParams();
+  const categoryProducts = products.filter(
+    (product) => product.category === category
+  );
 
   const categoryList = [];
   products.forEach((product) => {
@@ -24,11 +21,11 @@ const CategoryPage = ({ products }) => {
   return (
     <section className="CategoryPage">
       <div className="wrapper">
-        {categoryList.indexOf(cat) === -1 ? (
+        {categoryList.indexOf(category) === -1 ? (
           <ErrorPage />
         ) : (
           <>
-            <h2 className="pageTitle">{`${cat} Footwear`}</h2>
+            <h2 className="pageTitle">{`${category} Footwear`}</h2>
             <ul className="products">
               {categoryProducts.map((product) => (
                 <Product product={product} key={product.id} />

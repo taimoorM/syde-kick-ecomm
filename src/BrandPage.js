@@ -6,7 +6,6 @@ import Product from "./Product";
 
 const BrandPage = ({ products }) => {
   const { brand } = useParams();
-  const brandProducts = [];
   const brandTitle = brand.split("-").join(" ");
   const brandList = [];
   products.forEach((product) => {
@@ -15,11 +14,9 @@ const BrandPage = ({ products }) => {
     }
   });
 
-  products.forEach((product) => {
-    if (product.brand === brandTitle) {
-      brandProducts.push(product);
-    }
-  });
+  const brandProducts = products.filter(
+    (product) => product.brand === brandTitle
+  );
 
   return (
     <section className="BrandPage">
