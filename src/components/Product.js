@@ -42,7 +42,6 @@ const Product = ({ product }) => {
           <button className="button addBtn" onClick={openModal}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
-
           <Modal
             isOpen={isOpen}
             onRequestClose={closeModal}
